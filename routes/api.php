@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Article\ArticleController;
 
 
@@ -23,3 +25,6 @@ use App\Http\Controllers\Article\ArticleController;
 
 
 Route::apiResource('articles' , ArticleController::class);
+Route::post('/auth/login', [AuthController::class, 'login']);
+Route::post('/auth/check-otp', [AuthController::class, 'checkOtp']);
+Route::post('/auth/resend-otp', [AuthController::class, 'resendOtp']);

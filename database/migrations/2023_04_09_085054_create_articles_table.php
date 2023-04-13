@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('category_id');
-            $table->foreign('category_id')->references('id')->on('category_article')->onDelete('cascade');
+            $table->foreign('category_id')->references('id')->on('category_articles')->onDelete('cascade');
 
             $table->string('type')->default(0);
             $table->string('title');

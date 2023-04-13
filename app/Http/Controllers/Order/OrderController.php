@@ -30,7 +30,6 @@ class OrderController extends ApiController
 
         $order = Order::create([
             'user_id' => Auth()->id(),
-            'address_id' => $request->address_id,
             'total_amount' => $amounts['totalAmount'],
             'coupon_amount' => $amounts['couponAmount'],
             'paying_amount' => $amounts['payingAmount'],

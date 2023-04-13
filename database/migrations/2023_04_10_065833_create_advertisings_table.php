@@ -25,7 +25,6 @@ return new class extends Migration
             $table->string('type')->nullable();
             $table->string('call')->nullable();
             $table->string('phone')->nullable();
-            $table->string('type')->nullable();
             $table->text('description')->nullable();
             $table->text('body')->nullable();
 

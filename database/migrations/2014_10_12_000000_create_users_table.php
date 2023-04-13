@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('password')->nullable();
             $table->string('cellphone')->nullable()->unique();
             $table->string('otp')->nullable();
-            $table->integer('login_token')->nullable()->unique();
+            $table->string('login_token')->nullable()->unique();
             $table->tinyInteger('is_admin')->default(0);
 
             $table->softDeletes();
