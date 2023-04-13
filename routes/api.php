@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Article\ArticleController;
+use App\Http\Controllers\User\Order\OrderController;
+use App\Http\Controllers\User\Member\MemberController;
+use App\Http\Controllers\User\Profile\ProfileController;
 
 
 
@@ -25,6 +28,23 @@ use App\Http\Controllers\Article\ArticleController;
 
 
 Route::apiResource('articles' , ArticleController::class);
-Route::post('/auth/login', [AuthController::class, 'login']);
+Route::post('/auth/login', [AuthController::class, 'login'])->name('login');
 Route::post('/auth/check-otp', [AuthController::class, 'checkOtp']);
 Route::post('/auth/resend-otp', [AuthController::class, 'resendOtp']);
+
+Route::middleware(['auth:sanctum'])->group(function() {
+
+    Route::get('/auth/me', [AuthController::class, 'me']);
+});
+
+Route::middleware(['auth:sanctum'])->group(function() {
+
+    Route::get('user/profile/show', [ProfileController::class, 'show']);
+    Route::post('user/profile/create', [ProfileController::class, 'create']);
+
+    Route::get('user/order/index', [OrderController::class, 'index']);
+    Route::post('user/order/create', [OrderController::class, 'create']);
+
+    Route::get('user/member/index', [MemberController::class, 'index']);
+    Route::post('user/member/create', [MemberController::class, 'create']);
+});

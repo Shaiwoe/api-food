@@ -51,11 +51,28 @@ class User extends Authenticatable
 
     public function orders()
     {
-        return $this->hasMany(Order::class);
+        return $this->hasMany(UserOrder::class);
     }
 
     public function transactions()
     {
         return $this->hasMany(Transaction::class);
+    }
+
+    public function profiles()
+    {
+        return $this->hasMany(UserProfile::class);
+    }
+
+    public function getLatestProfileAttribute()
+    {
+        return $this->hasOne(UserProfile::class)
+            ->orderBy('id', 'DESC')
+            ->first();
+    }
+
+    public function members()
+    {
+        return $this->hasMany(UserMember::class);
     }
 }

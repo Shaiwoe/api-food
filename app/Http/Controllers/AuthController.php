@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Notifications\OTPSms;
-use App\Http\Resources\UserResource;
+use App\Http\Resources\User\UserResource;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\ApiController;
@@ -40,7 +40,7 @@ class AuthController extends ApiController
                 'login_token' => $loginToken
             ]);
         }
-        $user->notify(new OTPSms($OTPCode));
+        //$user->notify(new OTPSms($OTPCode));
 
         return $this->successResponse(['login_token' => $loginToken], 200);
     }
