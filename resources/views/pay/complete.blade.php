@@ -1,0 +1,1 @@
+Payment completed {{ $order->reference }}

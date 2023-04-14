@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a007b4b1d38100b21e17d63eb3ab5836",
+    "content-hash": "b2a4b126623c6cf183d0e0f3fdec308a",
     "packages": [
         {
             "name": "brick/math",
@@ -2693,6 +2693,51 @@
                 }
             ],
             "time": "2023-02-08T01:06:31+00:00"
+        },
+        {
+            "name": "persgeek/pay",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/persgeek/pay.git",
+                "reference": "8d68289d1e70b5118460c99ab21dae5e78d1c3b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/persgeek/pay/zipball/8d68289d1e70b5118460c99ab21dae5e78d1c3b9",
+                "reference": "8d68289d1e70b5118460c99ab21dae5e78d1c3b9",
+                "shasum": ""
+            },
+            "require": {
+                "persgeek/request": "dev-main",
+                "php": ">=7.3"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "helpers.php"
+                ],
+                "psr-4": {
+                    "PG\\Pay\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Saeed Johari",
+                    "email": "persgeek@gmail.com"
+                }
+            ],
+            "description": "Pay",
+            "support": {
+                "issues": "https://github.com/persgeek/pay/issues",
+                "source": "https://github.com/persgeek/pay/tree/main"
+            },
+            "time": "2023-04-14T21:20:34+00:00"
         },
         {
             "name": "persgeek/request",
@@ -8401,6 +8446,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "persgeek/pay": 20,
         "persgeek/request": 20,
         "persgeek/zibal": 20
     },

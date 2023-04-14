@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\User\Payment\Zibal\ZibalController;
+use App\Http\Controllers\User\Payment\Pay\PayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +15,5 @@ use App\Http\Controllers\User\Payment\Zibal\ZibalController;
 |
 */
 
-Route::get('user/payment/zibal/purchase/{id}', [ZibalController::class, 'purchase']);
-Route::get('user/payment/zibal/complete/{id}', [ZibalController::class, 'complete']);
+Route::get('user/payment/pay/purchase/{id}', [PayController::class, 'purchase']);
+Route::post('user/payment/pay/complete/{id}', [PayController::class, 'complete']);
