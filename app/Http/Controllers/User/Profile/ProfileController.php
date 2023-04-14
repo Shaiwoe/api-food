@@ -26,7 +26,13 @@ class ProfileController extends ApiController
             'national' => 'required|string',
             'phone' => 'required|string',
             'email' => 'required|email',
-            'address' => 'required|string'
+            'address' => 'required|string',
+            'shop_name' => 'required|string',
+            'shop_type' => 'required|string',
+            'shop_phone' => 'required|string',
+            'shop_address' => 'required|string',
+            'bank_sheba' => 'required|string',
+            'bank_name' => 'required|string'
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -38,7 +44,7 @@ class ProfileController extends ApiController
         }
 
         // Create profile
-        $data = ['name' => $request->name, 'national' => $request->national, 'phone' => $request->phone, 'email' => $request->email, 'address' => $request->address, 'status' => 'pending'];
+        $data = ['name' => $request->name, 'national' => $request->national, 'phone' => $request->phone, 'email' => $request->email, 'address' => $request->address, 'shop_name' => $request->shop_name, 'shop_type' => $request->shop_type, 'shop_phone' => $request->shop_phone, 'shop_address' => $request->shop_address, 'bank_sheba' => $request->bank_sheba, 'bank_name' => $request->bank_name, 'status' => 'pending'];
 
         $profile = $user->profiles()
             ->create($data);
