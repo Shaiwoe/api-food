@@ -32,7 +32,8 @@ class ProfileController extends ApiController
             'shop_phone' => 'required|string',
             'shop_address' => 'required|string',
             'bank_sheba' => 'required|string',
-            'bank_name' => 'required|string'
+            'bank_name' => 'required|string',
+            'documents' => 'required|mimes:zip|max:8192'
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -43,8 +44,11 @@ class ProfileController extends ApiController
             return $this->errorResponse( $validator->messages(), 422 );
         }
 
+        // Upload file
+        $path = $request->file('documents')->store('documents');
+
         // Create profile
-        $data = ['name' => $request->name, 'national' => $request->national, 'phone' => $request->phone, 'email' => $request->email, 'address' => $request->address, 'shop_name' => $request->shop_name, 'shop_type' => $request->shop_type, 'shop_phone' => $request->shop_phone, 'shop_address' => $request->shop_address, 'bank_sheba' => $request->bank_sheba, 'bank_name' => $request->bank_name, 'status' => 'pending'];
+        $data = ['name' => $request->name, 'national' => $request->national, 'phone' => $request->phone, 'email' => $request->email, 'address' => $request->address, 'shop_name' => $request->shop_name, 'shop_type' => $request->shop_type, 'shop_phone' => $request->shop_phone, 'shop_address' => $request->shop_address, 'bank_sheba' => $request->bank_sheba, 'bank_name' => $request->bank_name, 'zip_url' => $path, 'status' => 'pending'];
 
         $profile = $user->profiles()
             ->create($data);
