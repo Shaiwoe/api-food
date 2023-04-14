@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\User\Payment\Zibal\ZibalController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('user/payment/zibal/purchase/{id}', [ZibalController::class, 'purchase']);
+Route::get('user/payment/zibal/complete/{id}', [ZibalController::class, 'complete']);

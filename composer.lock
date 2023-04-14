@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "80d8448c6dd058bdad758339aa9a3a34",
+    "content-hash": "a007b4b1d38100b21e17d63eb3ab5836",
     "packages": [
         {
             "name": "brick/math",
@@ -1617,6 +1617,62 @@
             "time": "2023-04-05T15:28:17+00:00"
         },
         {
+            "name": "laravel/helpers",
+            "version": "v1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/helpers.git",
+                "reference": "4dd0f9436d3911611622a6ced8329a1710576f60"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/helpers/zipball/4dd0f9436d3911611622a6ced8329a1710576f60",
+                "reference": "4dd0f9436d3911611622a6ced8329a1710576f60",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.8.0|^6.0|^7.0|^8.0|^9.0|^10.0",
+                "php": "^7.1.3|^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^7.0|^8.0|^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                },
+                {
+                    "name": "Dries Vints",
+                    "email": "dries@laravel.com"
+                }
+            ],
+            "description": "Provides backwards compatibility for helpers in the latest Laravel release.",
+            "keywords": [
+                "helpers",
+                "laravel"
+            ],
+            "support": {
+                "source": "https://github.com/laravel/helpers/tree/v1.6.0"
+            },
+            "time": "2023-01-09T14:48:11+00:00"
+        },
+        {
             "name": "laravel/sanctum",
             "version": "v3.2.1",
             "source": {
@@ -2637,6 +2693,98 @@
                 }
             ],
             "time": "2023-02-08T01:06:31+00:00"
+        },
+        {
+            "name": "persgeek/request",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/persgeek/request.git",
+                "reference": "428483de58237042f86da3f5417a8b9687944ad6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/persgeek/request/zipball/428483de58237042f86da3f5417a8b9687944ad6",
+                "reference": "428483de58237042f86da3f5417a8b9687944ad6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.0"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "helpers.php"
+                ],
+                "psr-4": {
+                    "PG\\Request\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Saeed Johari",
+                    "email": "persgeek@gmail.com"
+                }
+            ],
+            "description": "Request",
+            "support": {
+                "issues": "https://github.com/persgeek/request/issues",
+                "source": "https://github.com/persgeek/request/tree/main"
+            },
+            "time": "2022-12-10T08:50:34+00:00"
+        },
+        {
+            "name": "persgeek/zibal",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/persgeek/zibal.git",
+                "reference": "4c583cb104902cf692e0fdfd1c9b6e1fe648d199"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/persgeek/zibal/zipball/4c583cb104902cf692e0fdfd1c9b6e1fe648d199",
+                "reference": "4c583cb104902cf692e0fdfd1c9b6e1fe648d199",
+                "shasum": ""
+            },
+            "require": {
+                "persgeek/request": "dev-main",
+                "php": ">=7.3"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "helpers.php"
+                ],
+                "psr-4": {
+                    "PG\\Zibal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Saeed Johari",
+                    "email": "persgeek@gmail.com"
+                }
+            ],
+            "description": "Zibal",
+            "support": {
+                "issues": "https://github.com/persgeek/zibal/issues",
+                "source": "https://github.com/persgeek/zibal/tree/main"
+            },
+            "time": "2021-08-19T13:43:10+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -8252,7 +8400,10 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "persgeek/request": 20,
+        "persgeek/zibal": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
