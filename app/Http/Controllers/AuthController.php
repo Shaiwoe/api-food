@@ -40,7 +40,7 @@ class AuthController extends ApiController
                 'login_token' => $loginToken
             ]);
         }
-        //$user->notify(new OTPSms($OTPCode));
+        $user->notify(new OTPSms($OTPCode));
 
         return $this->successResponse(['login_token' => $loginToken], 200);
     }

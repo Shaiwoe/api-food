@@ -32,12 +32,10 @@ Route::post('/auth/login', [AuthController::class, 'login'])->name('login');
 Route::post('/auth/check-otp', [AuthController::class, 'checkOtp']);
 Route::post('/auth/resend-otp', [AuthController::class, 'resendOtp']);
 
-Route::middleware(['auth:sanctum'])->group(function() {
 
-    Route::get('/auth/me', [AuthController::class, 'me']);
-});
+Route::group(['middleware' => ['auth:sanctum']], function() {
 
-Route::middleware(['auth:sanctum'])->group(function() {
+    Route::post('/auth/me', [AuthController::class, 'me']);
 
     Route::get('user/profile/show', [ProfileController::class, 'show']);
     Route::post('user/profile/create', [ProfileController::class, 'create']);
