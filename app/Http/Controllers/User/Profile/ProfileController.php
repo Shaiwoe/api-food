@@ -24,16 +24,18 @@ class ProfileController extends ApiController
         $rules = [
             'name' => 'required|string',
             'national' => 'required|string',
-            'phone' => 'required|string',
+            'cellphone' => 'required|string',
             'email' => 'required|email',
             'address' => 'required|string',
+            'phone' => 'required|string',
             'shop_name' => 'required|string',
             'shop_type' => 'required|string',
             'shop_phone' => 'required|string',
+            'shop_city' => 'required|string',
             'shop_address' => 'required|string',
             'bank_sheba' => 'required|string',
             'bank_name' => 'required|string',
-            'documents' => 'required|mimes:zip|max:8192'
+            'documents' => 'required|max:8192'
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -48,7 +50,7 @@ class ProfileController extends ApiController
         $path = $request->file('documents')->store('documents');
 
         // Create profile
-        $data = ['name' => $request->name, 'national' => $request->national, 'phone' => $request->phone, 'email' => $request->email, 'address' => $request->address, 'shop_name' => $request->shop_name, 'shop_type' => $request->shop_type, 'shop_phone' => $request->shop_phone, 'shop_address' => $request->shop_address, 'bank_sheba' => $request->bank_sheba, 'bank_name' => $request->bank_name, 'zip_url' => $path, 'status' => 'pending'];
+        $data = ['name' => $request->name, 'national' => $request->national, 'cellphone' => $request->cellphone, 'phone' => $request->phone, 'email' => $request->email, 'address' => $request->address, 'shop_name' => $request->shop_name, 'shop_type' => $request->shop_type, 'shop_phone' => $request->shop_phone, 'shop_city' => $request->shop_city, 'shop_address' => $request->shop_address, 'bank_sheba' => $request->bank_sheba, 'bank_name' => $request->bank_name, 'zip_url' => $path, 'status' => 'pending'];
 
         $profile = $user->profiles()
             ->create($data);

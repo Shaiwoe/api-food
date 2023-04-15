@@ -20,11 +20,13 @@ return new class extends Migration
             $table->string('name');
             $table->string('national');
             $table->string('phone');
+            $table->string('cellphone');
             $table->string('email');
             $table->string('address');
             $table->string('shop_name');
             $table->string('shop_type');
             $table->string('shop_phone');
+            $table->string('shop_city');
             $table->string('shop_address');
 
             $table->string('bank_sheba');
