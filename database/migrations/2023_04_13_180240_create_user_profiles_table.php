@@ -22,6 +22,15 @@ return new class extends Migration
             $table->string('phone');
             $table->string('email');
             $table->string('address');
+            $table->string('shop_name');
+            $table->string('shop_type');
+            $table->string('shop_phone');
+            $table->string('shop_address');
+
+            $table->string('bank_sheba');
+            $table->string('bank_name');
+
+            $table->string('zip_url');
 
             $table->string('status');
 
