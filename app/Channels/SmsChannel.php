@@ -10,14 +10,13 @@ class SmsChannel
     public function send($notifiable, Notification $notification)
     {
 
-        return 'done !';
+        return "Done ";
 
         $receptor = $notifiable->cellphone;
-        $type = 1;
         $template = "otp";
         $param1 = $notification->code;
 
         $api = new GhasedakApi(env('GHASEDAK_API_KEY'));
-        $api->Verify($receptor, $type, $template, $param1);
+        $api->Verify($receptor, $template, $param1);
     }
 }

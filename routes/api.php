@@ -36,6 +36,7 @@ Route::post('/auth/resend-otp', [AuthController::class, 'resendOtp']);
 Route::group(['middleware' => ['auth:sanctum']], function() {
 
     Route::post('/auth/me', [AuthController::class, 'me']);
+    Route::post('/auth/logout', [AuthController::class, 'logout']);
 
     Route::get('user/profile/show', [ProfileController::class, 'show']);
     Route::post('user/profile/create', [ProfileController::class, 'create']);
